@@ -1,3 +1,4 @@
+
 import random
 
 class producto:
@@ -41,3 +42,5 @@ def lista_compra(productos):
     return(factura,total)
 
 print(lista_compra(productos))
+
+#HOLAAAA
