@@ -4,8 +4,8 @@ use tienda
 CREATE TABLE Productos (
     Id_Producto INT PRIMARY KEY IDENTITY(1,1),
     Nombre VARCHAR(100),
-    Precio_Venta INT,
-    Precio_Compra INT,
+    Precio_Venta float,
+    Precio_Compra FLOAT,
     Cantidad INT
 );
 
@@ -20,8 +20,8 @@ CREATE TABLE Facturas (
     Id_Factura INT PRIMARY KEY IDENTITY(1,1),
     Id_caja INT,
     Fecha DATE,
-    Total INT,
-    FOREIGN KEY (Id_caja) REFERENCES Cajas(Id_Caja) -- Coma aï¿½adida antes de la clave forï¿½nea
+    Total FLOAT,
+    FOREIGN KEY (Id_caja) REFERENCES Cajas(Id_Caja) -- Coma añadida antes de la clave foránea
 );
 
 CREATE TABLE Lista_Compra (
@@ -36,13 +36,13 @@ CREATE TABLE Lista_Compra (
 CREATE TABLE Ventas (
     Id_Ventas INT PRIMARY KEY IDENTITY(1,1),
     Fecha DATE,
-    Total BIGINT
+    Total FLOAT
 );
 
 CREATE TABLE Gastos (
     Id_Gastos INT PRIMARY KEY IDENTITY(1,1),
     Fecha DATE,
-    Total BIGINT
+    Total FLOAT
 );
 
 
