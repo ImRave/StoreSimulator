@@ -35,5 +35,5 @@ resu.place(x=120, y=160, width=100, height=30) #Ubicar elementos.
 suma = tk.Button(ventana, text="Sumar", command=sumar) #Crea el widget tipo button (primer argumento es donde aparecera el label, segundo establece su contenido y el tercero funcion que se llamara cuando se precione.)
 suma.place(x=230, y=100, width=100, height=30) #Ubicar elementos.
 
-
+#holi
 ventana.mainloop() #Inicia el bucle de la interfaz   
