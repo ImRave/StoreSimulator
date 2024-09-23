@@ -21,7 +21,7 @@ CREATE TABLE Facturas (
     Id_caja INT,
     Fecha DATE,
     Total INT,
-    FOREIGN KEY (Id_caja) REFERENCES Cajas(Id_Caja) -- Coma añadida antes de la clave foránea
+    FOREIGN KEY (Id_caja) REFERENCES Cajas(Id_Caja) -- Coma aï¿½adida antes de la clave forï¿½nea
 );
 
 CREATE TABLE Lista_Compra (
