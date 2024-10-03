@@ -22,7 +22,13 @@ def conectar():
 def insertar():
     conn = sqlite3.connect("crud.db")
     cursor = conn.cursor()
-    if nombre.get() == "" or apellido.get() == "" or edad.get() == "":
+    item = tabla.selection()[0]
+    seleccionado = tabla.item(item, 'values')
+
+    if (id_entry.get()==seleccionado[0]):
+        messagebox.showwarning("Advertencia", "No puedes insertar una persona ya insertada.")
+        limpiar_campos()
+    elif (nombre.get() == "" or apellido.get() == "" or edad.get() == ""):
         messagebox.showwarning("Advertencia", "Todos los campos son obligatorios")
     else:
         cursor.execute("INSERT INTO personas (nombre, apellido, edad) VALUES (?, ?, ?)",
@@ -30,9 +36,9 @@ def insertar():
         conn.commit()
         conn.close()
         limpiar_campos()
-        mostrar_datos()
+        mostrar_datos_persona()
 
-def mostrar_datos():
+def mostrar_datos_persona():
     for item in tabla.get_children():
         tabla.delete(item)
 
@@ -59,7 +65,7 @@ def eliminar():
     conn.commit()
     conn.close()
     limpiar_campos()
-    mostrar_datos()
+    mostrar_datos_persona()
 
 def actualizar():
     conn = sqlite3.connect("crud.db")
@@ -72,7 +78,7 @@ def actualizar():
     conn.commit()
     conn.close()
     limpiar_campos()
-    mostrar_datos()
+    mostrar_datos_persona()
 
 def seleccionar(event):
     try:
@@ -135,6 +141,6 @@ tabla.bind('<<TreeviewSelect>>', seleccionar)
 
 # Mostrar los registros al iniciar
 conectar()
-mostrar_datos()
+mostrar_datos_persona()
 
 root.mainloop()
