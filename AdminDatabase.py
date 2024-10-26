@@ -1,4 +1,4 @@
-import sqlite3, random
+import sqlite3
 
 
 def CrearDB():
@@ -17,7 +17,8 @@ def CreateTabels():
         Nombre TEXT,
         Precio_Venta  FLOAT,
         Precio_Compra FLOAT,
-        Cantidad INT
+        Cantidad INT,
+        Imagen_producto BLOB
     )
     """)
 
@@ -38,7 +39,9 @@ def CreateTabels():
         Id_caja INTEGER,
         Fecha DATE,
         Total  FLOAT,
+        qr_Factura BLOB,
         FOREIGN KEY (Id_caja) REFERENCES Cajas(Id_Caja)
+        
     )
     """)
 
@@ -73,3 +76,5 @@ def CreateTabels():
     """)
     conn.commit()
     conn.close()
+
+CrearDB()
