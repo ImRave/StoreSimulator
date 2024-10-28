@@ -5,9 +5,9 @@ def CrearDB():
     conn = sqlite3.connect("InvetarioYFacturas.db")
     conn.commit()
     conn.close()
-    CreateTabels()
+    CreateTables()
 
-def CreateTabels():
+def CreateTables():
     conn = sqlite3.connect("InvetarioYFacturas.db")
     cursor =conn.cursor()
     # Crear la tabla Productos
@@ -74,6 +74,13 @@ def CreateTabels():
         Total  FLOAT
     )
     """)
+
+    cursor.execute("""
+    INSERT OR IGNORE INTO Cajas (Id_Caja, N_vendedor, Telefono, Email)
+    VALUES (1, 'Juan Pérez', '123456789', 'juan@example.com'),
+            (2, 'Nathalia Gomez', '32612380', 'natha@gmail.com')
+    """)
+
     conn.commit()
     conn.close()
 
