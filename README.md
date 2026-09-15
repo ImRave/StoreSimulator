@@ -350,16 +350,6 @@ StoreSimulator también funciona como un proyecto práctico para reforzar conoci
 
 El proyecto permite integrar diferentes conceptos de programación en una aplicación relacionada con un escenario real.
 
----
-
-## 👨‍💻 Autor
-
-**ImRave**
-
-GitHub: [@ImRave](https://github.com/ImRave?utm_source=chatgpt.com)
-
----
-
 ## 📄 Licencia
 
 Este proyecto actualmente no muestra una licencia explícita en la raíz del repositorio, por lo que se recomienda agregar una antes de declarar formalmente una licencia de uso o distribución.
